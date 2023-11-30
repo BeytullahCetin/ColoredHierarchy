@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ namespace BeytuHierarchy
 		public static void Setup()
 		{
 			BeytuHierarchySettings asset = ScriptableObject.CreateInstance<BeytuHierarchySettings>();
+			var folder = Directory.CreateDirectory("Assets/BeytuHierarchy");
 			string pathPrefix = "Assets/BeytuHierarchy";
 			string path = "/BeytuHierarchySetting.asset";
 

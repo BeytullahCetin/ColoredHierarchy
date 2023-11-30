@@ -23,7 +23,8 @@ namespace BeytuHierarchy
             dataArray = AssetDatabase.FindAssets("t:BeytuHierarchySettings");
             if (dataArray.Length == 0)
             {
-                Debug.Log("<color=red>BeytuHierarchy asset not found!</color>");
+                Debug.Log("<color=red>BeytuHierarchy asset not found! New Asset Created!</color>");
+                BeytuHierarchySettings.Setup();
                 return;
             }
             //We have only one color palette, so we use dataArray[0] to get the path of the file
