@@ -68,7 +68,8 @@ namespace BeytuHierarchy
             string newName = gameObjectName[1];
 
             //Draw a rectangle as a background, and set the color.
-            EditorGUI.DrawRect(selectionRect, design.backgroundColor);
+            Color colorToDraw = new Color(design.backgroundColor.r, design.backgroundColor.g, design.backgroundColor.b, 255);
+            EditorGUI.DrawRect(selectionRect, colorToDraw);
 
             //Create a new GUIStyle to match the desing in colorDesigns list.
             GUIStyle newStyle = new GUIStyle
