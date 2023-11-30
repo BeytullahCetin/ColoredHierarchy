@@ -34,8 +34,8 @@ namespace BeytuHierarchy
 		public static void Setup()
 		{
 			BeytuHierarchySettings asset = ScriptableObject.CreateInstance<BeytuHierarchySettings>();
-			var folder = Directory.CreateDirectory("Assets/BeytuHierarchy");
-			string pathPrefix = "Assets/BeytuHierarchy";
+			var folder = Directory.CreateDirectory("Assets/Editor Default Resources");
+			string pathPrefix = "Assets/Editor Default Resources";
 			string path = "/BeytuHierarchySetting.asset";
 
 			ResetAndLoadInitialSettings(asset);
