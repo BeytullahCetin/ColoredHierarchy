@@ -29,7 +29,7 @@ namespace ColoredHierarchy
 			return null;
 		}
 
-		[MenuItem("Hierarchy/Setup ColoredHierarchySettings")]
+		[MenuItem("Tools/Colored Hierarchy/Setup ColoredHierarchySettings")]
 		public static void Setup()
 		{
 			string pathPrefix = "Assets/Colored Hierarchy";
