@@ -3,12 +3,12 @@ This is a simple hierarchy drawer package.
 
 After importing create settings scriptable object from top menu with:
 ```
-Hierarchy > Setup BeytuHierarchy
+Hierarchy > Setup ColoredHierarchy
 ```
 
-After that you can directly start with pre defined prefixes(\"1\", \"2\", \"3\", \"4\", \"5\", \"6\") using or customize it in
+After that you can directly start with pre defined prefixes(\"1\", \"2\", \"3\", \"4\", \"5\", \"6\") using or customize it in project tab
 ```
-Assets > BeytuHierarchy > BeytuHierarchySettings
+Assets > Editor Default Resources > ColoredHierarchySettings
 ```
 
 ## Tested Unity Version
