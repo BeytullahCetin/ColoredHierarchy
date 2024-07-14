@@ -32,13 +32,13 @@ namespace ColoredHierarchy
 		[MenuItem("Hierarchy/Setup ColoredHierarchySettings")]
 		public static void Setup()
 		{
-			ColoredHierarchySettings asset = CreateInstance<ColoredHierarchySettings>();
-			string pathPrefix = "Assets/Editor Default Resources";
+			string pathPrefix = "Assets/Colored Hierarchy";
 			string path = "/ColoredHierarchySettings.asset";
 			Directory.CreateDirectory(pathPrefix);
 
-			ResetAndLoadInitialSettings(asset);
+			ColoredHierarchySettings asset = CreateInstance<ColoredHierarchySettings>();
 			AssetDatabase.CreateAsset(asset, pathPrefix + path);
+			ResetAndLoadInitialSettings(asset);
 			StyleHierarchy.Initialize();
 		}
 
