@@ -1,6 +1,7 @@
-using System.Linq;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace BeytuHierarchy
 {
@@ -42,7 +43,7 @@ namespace BeytuHierarchy
 
             //To make sure there is no error on the first time the tool imported in project
             if (dataArray.Length == 0) return;
-            UnityEngine.Object instance = EditorUtility.InstanceIDToObject(instanceID);
+            Object instance = EditorUtility.InstanceIDToObject(instanceID);
 
             if (instance == null)
                 return;
@@ -57,19 +58,31 @@ namespace BeytuHierarchy
                 return;
 
             string[] gameObjectName = instance.name.Split(" ");
-            string keyChar = gameObjectName[0];
 
+            // Remove the symbol (keyChar) from the name.
+            StringBuilder newNameBuilder = new StringBuilder();
+            for (int i = 1; i < gameObjectName.Length; i++)
+            {
+                if (i > 1) newNameBuilder.Append(" ");
+                newNameBuilder.Append(gameObjectName[i]);
+            }
+
+            string keyChar = gameObjectName[0];
+            string newName = newNameBuilder.ToString();
             ColorDesign design = hierarchySettings.GetColorDesign(keyChar);
 
             if (design == null)
                 return;
 
-            //Remove the symbol(keyChar) from the name.
-            string newName = gameObjectName[1];
-
-            //Draw a rectangle as a background, and set the color.
             Color colorToDraw = new Color(design.backgroundColor.r, design.backgroundColor.g, design.backgroundColor.b, 255);
-            EditorGUI.DrawRect(selectionRect, colorToDraw);
+
+            if ((instance as GameObject).activeSelf == false)
+            {
+                colorToDraw.r = colorToDraw.r / 2;
+                colorToDraw.g = colorToDraw.g / 2;
+                colorToDraw.b = colorToDraw.b / 2;
+                newName = "(DISABLED) " + newName;
+            }
 
             //Create a new GUIStyle to match the desing in colorDesigns list.
             GUIStyle newStyle = new GUIStyle
@@ -82,11 +95,8 @@ namespace BeytuHierarchy
                 }
             };
 
-            //Draw a label to show the name in upper letters and newStyle.
-            if ((instance as GameObject).activeSelf == true)
-                EditorGUI.LabelField(selectionRect, newName, newStyle);
-            else
-                EditorGUI.LabelField(selectionRect, "(DISABLED) " + newName, newStyle);
+            EditorGUI.DrawRect(selectionRect, colorToDraw);
+            EditorGUI.LabelField(selectionRect, newName, newStyle);
         }
 
         private static void DrawEnableDisableToggle(Object instance, Rect selectionRect, bool canDraw)

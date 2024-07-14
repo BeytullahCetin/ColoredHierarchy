@@ -46,9 +46,13 @@ namespace BeytuHierarchy
 		public static void ResetAndLoadInitialSettings(BeytuHierarchySettings asset)
 		{
 			asset.colorDesigns.Clear();
-			asset.colorDesigns.Add(new ColorDesign("//", new Color32(0, 125, 255, 255), new Color32(255, 255, 255, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
-			asset.colorDesigns.Add(new ColorDesign("///", new Color32(0, 140, 70, 255), new Color32(255, 255, 255, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
-			asset.colorDesigns.Add(new ColorDesign("@", new Color32(255, 100, 0, 255), new Color32(255, 255, 255, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+			asset.colorDesigns.Add(new ColorDesign("1", new Color32(0, 125, 255, 255), new Color32(255, 255, 255, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+			asset.colorDesigns.Add(new ColorDesign("2", new Color32(0, 140, 70, 255), new Color32(255, 255, 255, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+			asset.colorDesigns.Add(new ColorDesign("3", new Color32(255, 100, 0, 255), new Color32(255, 255, 255, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+			asset.colorDesigns.Add(new ColorDesign("4", new Color32(255, 255, 0, 255), new Color32(0, 0, 0, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+			asset.colorDesigns.Add(new ColorDesign("5", new Color32(0, 255, 255, 255), new Color32(0, 0, 0, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+			asset.colorDesigns.Add(new ColorDesign("6", new Color32(255, 0, 255, 255), new Color32(0, 0, 0, 255), TextAnchor.MiddleCenter, FontStyle.Bold));
+
 		}
 	}
 
