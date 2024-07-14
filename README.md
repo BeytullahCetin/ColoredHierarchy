@@ -12,5 +12,5 @@ Assets > Editor Default Resources > ColoredHierarchySettings
 ```
 
 ## Tested Unity Version
-Unity 6 Preview (6000.0.10f1) /
+Unity 6 Preview (6000.0.10f1) \
 Unity 2022.3.9f1
